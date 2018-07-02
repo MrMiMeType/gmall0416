@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/gmall-usermanage/gamll-usermanage.iml" filepath="$PROJECT_DIR$/gmall-usermanage/gamll-usermanage.iml" />
       <module fileurl="file://$PROJECT_DIR$/gmall-usermanage/gmall-usermanage.iml" filepath="$PROJECT_DIR$/gmall-usermanage/gmall-usermanage.iml" />
       <module fileurl="file://$PROJECT_DIR$/gmall0416.iml" filepath="$PROJECT_DIR$/gmall0416.iml" />
     </modules>

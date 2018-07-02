@@ -6,7 +6,6 @@ import com.atguigu.gmall0416.usermanage.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import tk.mybatis.mapper.entity.Example;
-
 import java.util.List;
 
 @Service

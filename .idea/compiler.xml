@@ -6,10 +6,12 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="gamll0416" />
         <module name="gmall-usermanage" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="gamll0416" target="1.8" />
       <module name="gmall-usermanage" target="1.8" />
     </bytecodeTargetLevel>
   </component>
