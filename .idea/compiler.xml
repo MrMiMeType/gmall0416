@@ -7,12 +7,32 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="gamll0416" />
+        <module name="gmall-bean" />
+        <module name="gmall-common-util" />
+        <module name="gmall-interface" />
+        <module name="gmall-order-web" />
+        <module name="gmall-service-util" />
         <module name="gmall-usermanage" />
+        <module name="gmall-web-util" />
+      </profile>
+      <profile name="Annotation profile for manage-order-web" enabled="true">
+        <sourceOutputDir name="../manage-order-web/target/generated-sources/annotations" />
+        <sourceTestOutputDir name="../manage-order-web/target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="manage-order-web" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="gamll0416" target="1.8" />
+      <module name="gmall-bean" target="1.8" />
+      <module name="gmall-common-util" target="1.8" />
+      <module name="gmall-interface" target="1.8" />
+      <module name="gmall-order-web" target="1.8" />
+      <module name="gmall-parent" target="1.8" />
+      <module name="gmall-service-util" target="1.8" />
       <module name="gmall-usermanage" target="1.8" />
+      <module name="gmall-web-util" target="1.8" />
+      <module name="manage-order-web" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
