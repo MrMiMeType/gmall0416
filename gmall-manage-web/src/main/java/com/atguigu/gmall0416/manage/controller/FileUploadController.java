@@ -33,7 +33,7 @@ public class FileUploadController {
         if(upload_file.length>=2){
             filePath="http://file.gmall.com/"+upload_file[0]+"/"+upload_file[1];
         }
-        //返回图片地址
+        //返回图片地址，感觉很难办的样子！
         return filePath;
     }
     @Test
