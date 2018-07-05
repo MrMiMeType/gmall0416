@@ -4,10 +4,10 @@ import com.alibaba.dubbo.config.annotation.Reference;
 import com.atguigu.gamll0416.service.ManageService;
 import com.atguigu.gmall0416.bean.BaseAttrInfo;
 import com.atguigu.gmall0416.bean.BaseCatalog1;
-
 import com.atguigu.gmall0416.bean.BaseCatalog2;
 import com.atguigu.gmall0416.bean.BaseCatalog3;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -54,13 +54,10 @@ public class ManageController {
         List<BaseAttrInfo> attrInfoList = manageService.getAttrInfoList(catalog3Id);
         return attrInfoList;
     }
-    @RequestMapping("/saveAttrInfo")
-    public String saveAttrInfo(){
-        //1.获取三级分类的id
-
-        //2.添加平台属性值，并返回主键值
-
-        //3.根据主键值，插入value值
-        return null;
+    @PostMapping("/saveAttrInfo")
+    @ResponseBody
+    public String saveAttrInfo(BaseAttrInfo baseAttrInfo){
+        manageService.saveBaseAttrInfo(baseAttrInfo);
+        return "success";
     }
 }

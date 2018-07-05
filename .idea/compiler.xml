@@ -25,6 +25,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="fastdfs-client-java" target="1.6" />
       <module name="gamll0416" target="1.8" />
       <module name="gmall-bean" target="1.8" />
       <module name="gmall-common-util" target="1.8" />

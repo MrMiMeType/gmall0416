@@ -2,10 +2,7 @@ package com.atguigu.gmall0416.manage.service.impl;
 
 import com.alibaba.dubbo.config.annotation.Service;
 import com.atguigu.gamll0416.service.ManageService;
-import com.atguigu.gmall0416.bean.BaseAttrInfo;
-import com.atguigu.gmall0416.bean.BaseCatalog1;
-import com.atguigu.gmall0416.bean.BaseCatalog2;
-import com.atguigu.gmall0416.bean.BaseCatalog3;
+import com.atguigu.gmall0416.bean.*;
 import com.atguigu.gmall0416.manage.mapper.*;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -23,6 +20,8 @@ public class ManageServiceImpl implements ManageService{
     BaseAttrInfoMapper baseAttrInfoMapper;
     @Autowired
     BaseAttrValueMapper baseAttrValueMapper;
+    @Autowired
+    SpuInfoMapper spuInfoMapper;
 
     @Override
     public List<BaseCatalog1> getCatalog1() {
@@ -51,5 +50,32 @@ public class ManageServiceImpl implements ManageService{
         baseAttrInfoQuery.setCatalog3Id(catalog3Id);
         List<BaseAttrInfo> baseAttrInfoList = baseAttrInfoMapper.select(baseAttrInfoQuery);
         return baseAttrInfoList;
+    }
+
+    @Override
+    public void saveBaseAttrInfo(BaseAttrInfo baseAttrInfo) {
+        //保存属性主表
+        if (baseAttrInfo.getId()!=null&&baseAttrInfo.getId().length()==0){//排除长度为零的字符串
+            baseAttrInfo.setId(null);
+        }
+        baseAttrInfoMapper.insertSelective(baseAttrInfo);
+        //保存属性值
+        List<BaseAttrValue> attrValueList = baseAttrInfo.getAttrValueList();
+        for (BaseAttrValue baseAttrValue : attrValueList) {
+            if (baseAttrValue.getId()!=null&&baseAttrValue.getId().length()==0){
+                baseAttrValue.setId(null);
+            }
+            baseAttrValue.setAttrId(baseAttrInfo.getId());
+            baseAttrValueMapper.insertSelective(baseAttrValue);
+        }
+
+    }
+
+    @Override
+    public List<SpuInfo> getSpuInfoList(String catalog3Id) {
+        SpuInfo spuInfoQuery = new SpuInfo();
+        spuInfoQuery.setCatalog3Id(catalog3Id);
+        List<SpuInfo> spuInfoList = spuInfoMapper.select(spuInfoQuery);
+        return spuInfoList;
     }
 }
