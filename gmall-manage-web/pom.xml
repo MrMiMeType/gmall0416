@@ -36,10 +36,10 @@
 			<version>1.0-SNAPSHOT</version>
 		</dependency>
 		<!--编译的fastdfs源码包-->
+		<!--其实我觉得这个做统一的版本管理其实没有什么意义，反正都要通过编译源码-->
 		<dependency>
 			<groupId>org.csource</groupId>
 			<artifactId>fastdfs-client-java</artifactId>
-			<version>1.27-SNAPSHOT</version>
 		</dependency>
 	</dependencies>
 

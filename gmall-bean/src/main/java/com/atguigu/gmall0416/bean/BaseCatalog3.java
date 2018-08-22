@@ -4,6 +4,10 @@ import javax.persistence.Column;
 import javax.persistence.Id;
 import java.io.Serializable;
 
+/**
+ * @param
+ * @return
+ */
 public class BaseCatalog3 implements Serializable {
     @Id
     @Column
@@ -35,14 +39,5 @@ public class BaseCatalog3 implements Serializable {
 
     public void setCatalog2Id(String catalog2Id) {
         this.catalog2Id = catalog2Id;
-    }
-
-    @Override
-    public String toString() {
-        return "BaseCatalog3{" +
-                "id='" + id + '\'' +
-                ", name='" + name + '\'' +
-                ", catalog2Id='" + catalog2Id + '\'' +
-                '}';
     }
 }

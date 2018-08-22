@@ -1,12 +1,19 @@
 package com.atguigu.gmall0416.bean;
 
 import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.io.Serializable;
 
+/**
+ * @param
+ * @return
+ */
 public class BaseCatalog1 implements Serializable {
     @Id
     @Column
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String id;
     @Column
     private String name;
@@ -26,12 +33,5 @@ public class BaseCatalog1 implements Serializable {
     public void setName(String name) {
         this.name = name;
     }
-
-    @Override
-    public String toString() {
-        return "BaseCatalog1{" +
-                "id='" + id + '\'' +
-                ", name='" + name + '\'' +
-                '}';
-    }
 }
+

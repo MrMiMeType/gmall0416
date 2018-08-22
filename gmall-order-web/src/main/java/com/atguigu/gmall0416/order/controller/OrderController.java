@@ -22,4 +22,10 @@ public class OrderController {
         String UserAddressString = JSON.toJSONString(userAddressList);
         return UserAddressString;
     }
+    @RequestMapping("/currentPort")
+    @ResponseBody
+    public String sysoutCurrentPort(HttpServletRequest request){
+        int localPort = request.getLocalPort();
+        return "use_port:"+localPort;
+    }
 }

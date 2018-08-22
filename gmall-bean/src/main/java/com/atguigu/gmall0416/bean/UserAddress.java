@@ -1,10 +1,13 @@
 package com.atguigu.gmall0416.bean;
 
-
 import javax.persistence.Column;
 import javax.persistence.Id;
 import java.io.Serializable;
 
+/**
+ * @param
+ * @return
+ */
 public class UserAddress implements Serializable {
     @Column
     @Id
@@ -66,17 +69,5 @@ public class UserAddress implements Serializable {
 
     public void setIsDefault(String isDefault) {
         this.isDefault = isDefault;
-    }
-
-    @Override
-    public String toString() {
-        return "UserAddress{" +
-                "id='" + id + '\'' +
-                ", userAddress='" + userAddress + '\'' +
-                ", userId='" + userId + '\'' +
-                ", consignee='" + consignee + '\'' +
-                ", phoneNum='" + phoneNum + '\'' +
-                ", isDefault='" + isDefault + '\'' +
-                '}';
     }
 }

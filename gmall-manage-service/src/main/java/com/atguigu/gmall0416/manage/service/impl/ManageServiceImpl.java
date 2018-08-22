@@ -22,6 +22,12 @@ public class ManageServiceImpl implements ManageService{
     BaseAttrValueMapper baseAttrValueMapper;
     @Autowired
     SpuInfoMapper spuInfoMapper;
+    @Autowired
+    SkuInfoMapper skuInfoMapper;
+    @Autowired
+    SkuImageMapper skuImageMapper;
+    @Autowired
+    SkuSaleAttrValueMapper skuSaleAttrValueMapper;
 
     @Override
     public List<BaseCatalog1> getCatalog1() {
@@ -77,5 +83,24 @@ public class ManageServiceImpl implements ManageService{
         spuInfoQuery.setCatalog3Id(catalog3Id);
         List<SpuInfo> spuInfoList = spuInfoMapper.select(spuInfoQuery);
         return spuInfoList;
+    }
+
+    public SkuInfo getSkuInfo(String skuId){
+
+        SkuInfo skuInfo = skuInfoMapper.selectByPrimaryKey(skuId);
+        if(skuInfo==null){
+            return null;
+        }
+        SkuImage skuImage=new SkuImage();
+        skuImage.setSkuId(skuId);
+        List<SkuImage> skuImageList = skuImageMapper.select(skuImage);
+        skuInfo.setSkuImageList(skuImageList);
+
+        SkuSaleAttrValue skuSaleAttrValue=new SkuSaleAttrValue();
+        skuSaleAttrValue.setSkuId(skuId);
+        List<SkuSaleAttrValue> skuSaleAttrValueList = skuSaleAttrValueMapper.select(skuSaleAttrValue);
+        skuInfo.setSkuSaleAttrValueList(skuSaleAttrValueList);
+
+        return  skuInfo;
     }
 }
